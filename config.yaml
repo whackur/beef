@@ -62,7 +62,7 @@ beef:
         # Note that this causes the BeEF server to trust the X-Forwarded-For HTTP header.
         # If the BeEF server is directly accessible, clients can spoof their connecting
         # IP address using this header to bypass the IP address permissions/exclusions.
-        allow_reverse_proxy: false
+        allow_reverse_proxy: true
 
         # Hook
         hook_file: "/hook.js"
@@ -88,7 +88,7 @@ beef:
         # Imitate a specified web server (default root page, 404 default error page, 'Server' HTTP response header)
         web_server_imitation:
             enable: true
-            type: "apache" # Supported: apache, iis, nginx
+            type: "nginx" # Supported: apache, iis, nginx
             hook_404: false # inject BeEF hook in HTTP 404 responses
             hook_root: false # inject BeEF hook in the server home page
         # Experimental HTTPS support for the hook / admin / all other Thin managed web services
