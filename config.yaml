@@ -17,8 +17,8 @@ beef:
     # Credentials to authenticate in BeEF.
     # Used by both the RESTful API and the Admin interface
     credentials:
-        user:   "beef"
-        passwd: "beef"
+        user:   "beefuser"
+        passwd: "beef!!pass@@"
 
     # Interface / IP restrictions
     restrictions:
@@ -53,10 +53,10 @@ beef:
         # If you're using a public domain name, reverse proxy, or port forwarding you must
         # configure the public-facing connection details here.
 
-        #public:
-        #    host: "beef.local" # public hostname/IP address
-        #    port: "443" # public port (443 if the public server is using HTTPS)
-        #    https: false # true/false
+        public:
+            host: "beef.hakhub.net" # public hostname/IP address
+            port: "443" # public port (443 if the public server is using HTTPS)
+            https: true # true/false
 
         # If using any reverse proxy you should also set allow_reverse_proxy to true below.
         # Note that this causes the BeEF server to trust the X-Forwarded-For HTTP header.
@@ -71,8 +71,8 @@ beef:
         # Allow one or multiple origins to access the RESTful API using CORS
         # For multiple origins use: "http://browserhacker.com, http://domain2.com"
         restful_api:
-            allow_cors: false
-            cors_allowed_domains: "http://browserhacker.com"
+            allow_cors: true
+            cors_allowed_domains: "https://beef.hakhub.net, https://goodayz.tistory.com, https://whackur.tistory.com, https://blog.naver.com"
 
         # Prefer WebSockets over XHR-polling when possible.
         websocket:
@@ -89,8 +89,8 @@ beef:
         web_server_imitation:
             enable: true
             type: "nginx" # Supported: apache, iis, nginx
-            hook_404: false # inject BeEF hook in HTTP 404 responses
-            hook_root: false # inject BeEF hook in the server home page
+            hook_404: true # inject BeEF hook in HTTP 404 responses
+            hook_root: true # inject BeEF hook in the server home page
         # Experimental HTTPS support for the hook / admin / all other Thin managed web services
         https:
             enable: false
